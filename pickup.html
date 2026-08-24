@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trending Pickup Trucks 2026</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('webpage-image.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+    nav {
+      background: rgba(0,0,0,0.7);
+      padding: 15px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border: 3px solid transparent;
+      border-radius: 10px;
+    }
+    nav:hover { border-color: #ffcc00; }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+    }
+    nav a:hover {
+      color: #ffcc00;
+      transform: scale(1.1);
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      margin: 30px;
+    }
+    .card {
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      width: 300px;
+      height: 300px;
+      margin: 15px;
+      padding: 20px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .card:hover { border-color: darkorange; transform: scale(1.05); }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
+      z-index: 0;
+    }
+    .card h2, .specs {
+      position: relative;
+      z-index: 1;
+      color: yellow;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    }
+    .specs { list-style: none; padding: 0; }
+    .specs li { margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <script src="main.js"></script>
+
+  <nav>
+    <a href="car-homepage.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="https://www.91wheels.com/"><i class="fa-solid fa-truck-pickup"></i> Pickup Trucks</a>
+    <a href="#"><i class="fa-solid fa-car"></i> Cars</a>
+    <a href="#"><i class="fa-solid fa-phone"></i> Contact</a>
+    <a href="#"><i class="fa-regular fa-circle-user"></i> User</a>
+  </nav>
+
+  <div class="container">
+    <div class="card" style="background-image:url('fordpickup.jpg');">
+      <h2>Ford F-150</h2>
+      <ul class="specs">
+        <li>Seating: 5/6</li>
+        <li>Engine: V6/V8 Options</li>
+        <li>Towing Capacity: 6,000–14,000 lbs</li>
+        <li>Price: ₹35–55 Lakh</li>
+      </ul>
+    </div>
+    <div class="card" style="background-image:url('hilux.jpg');">
+      <h2>Toyota Hilux</h2>
+      <ul class="specs">
+        <li>Seating: 5</li>
+        <li>Engine: 2.8L Diesel</li>
+        <li>Towing Capacity: 3,500 kg</li>
+        <li>Price: ₹30–40 Lakh</li>
+      </ul>
+    </div>
+    <div class="card" style="background-image:url('chevrolet.jpg');">
+      <h2>Chevrolet Silverado</h2>
+      <ul class="specs">
+        <li>Seating: 5/6</li>
+        <li>Engine: V6/V8 Options</li>
+        <li>Towing Capacity: 13,300 lbs</li>
+        <li>Price: ₹40–60 Lakh</li>
+      </ul>
+    </div>
+    <div class="card" style="background-image:url('ram.jpg');">
+      <h2>RAM 1500</h2>
+      <ul class="specs">
+        <li>Seating: 5/6</li>
+        <li>Engine: 3.6L V6 / 5.7L V8</li>
+        <li>Towing Capacity: 12,750 lbs</li>
+        <li>Price: ₹45–65 Lakh</li>
+      </ul>
+    </div>
+    <div class="card" style="background-image:url('dmax.jpg');">
+      <h2>Isuzu D-Max V-Cross</h2>
+      <ul class="specs">
+        <li>Seating: 5</li>
+        <li>Engine: 1.9L Diesel</li>
+        <li>Towing Capacity: 3,500 kg</li>
+        <li>Price: ₹20–25 Lakh</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
