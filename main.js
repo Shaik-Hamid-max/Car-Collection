@@ -112,27 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
           modalContent.innerHTML = `<h2>${title}</h2><pre>${specs}</pre>`;
           modal.style.display = "flex";
         });
-
-        // Favorites button
-        const favBtn = document.createElement("button");
-        favBtn.textContent = "❤️ Save";
-        favBtn.style.marginTop = "10px";
-        favBtn.style.display = "block";
-        favBtn.style.cursor = "pointer";
-        card.appendChild(favBtn);
-
-        favBtn.addEventListener("click", () => {
-          const carName = card.querySelector("h2").textContent;
-          let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-          
-          if (!favorites.includes(carName)) {
-            favorites.push(carName);
-            localStorage.setItem("favorites", JSON.stringify(favorites));
-            showNotification(`${carName} added to favorites!`);
-          } else {
-            showNotification(`${carName} is already in favorites!`);
-          }
-        });
       });
     }
 
@@ -156,61 +135,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     }
-
-    // ⭐ Go to Favorites button
-    const favPageBtn = document.createElement("button");
-    favPageBtn.textContent = "⭐ View Favorites";
-    favPageBtn.style.position = "fixed";
-    favPageBtn.style.bottom = "20px";
-    favPageBtn.style.left = "20px";
-    favPageBtn.style.padding = "10px 20px";
-    favPageBtn.style.borderRadius = "8px";
-    favPageBtn.style.cursor = "pointer";
-    favPageBtn.style.background = "gold";
-    favPageBtn.style.fontWeight = "bold";
-    document.body.appendChild(favPageBtn);
-
-    favPageBtn.addEventListener("click", () => {
-      window.location.href = "favorites.html";
-    });
   }
-
-  /* ---------------- FAVORITES PAGE ---------------- */
-  if (path.includes("favorites.html")) {
-    const favoritesList = document.getElementById("favoritesList");
-    const clearBtn = document.getElementById("clearFavorites");
-
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-    favorites.forEach(carName => {
-      const carItem = document.createElement("div");
-      carItem.className = "car-item";
-      carItem.textContent = carName;
-
-      // Remove button
-      const removeBtn = document.createElement("button");
-      removeBtn.textContent = "❌ Remove";
-      removeBtn.style.marginLeft = "10px";
-      removeBtn.style.cursor = "pointer";
-      carItem.appendChild(removeBtn);
-
-      removeBtn.addEventListener("click", () => {
-        favorites = favorites.filter(fav => fav !== carName);
-        localStorage.setItem("favorites", JSON.stringify(favorites));
-        carItem.remove();
-        showNotification(`${carName} removed from favorites!`);
-      });
-
-      favoritesList.appendChild(carItem);
-    });
-
-    clearBtn.addEventListener("click", () => {
-      localStorage.removeItem("favorites");
-      favoritesList.innerHTML = "";
-      showNotification("Favorites cleared!");
-    });
-  }
-
+  
   /* ---------------- GLOBAL FEATURES ---------------- */
   // Back-to-top
   const backToTop = document.createElement("button");
